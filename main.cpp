@@ -34,6 +34,7 @@ bool getXOrMask(bool maskArray[], bool outputArray[], int n);
 bool getXNOrMask(bool maskArray[], bool outputArray[], int n);
 int findMax(float arr[], int n, int gateCount[], int popIndex[]);
 int seed;
+int fold;
 
 int main(int argc, const char * argv[]) {
 
@@ -43,8 +44,13 @@ int main(int argc, const char * argv[]) {
     //srand(time.tv_usec);
 
     //Randomize with a number
-    seed = 4;
+    seed = 0;
     srand(seed);
+
+    //Select the curent fold of K-fold cross validation
+    //Warning: K-Fold is manual
+    fold = 7;
+
 
     //Read CSV File
     std::ifstream myFile("cleveland.csv");
@@ -319,7 +325,7 @@ int main(int argc, const char * argv[]) {
 
     //Evaluation Parameters
     bool useKFold= true;
-    int currentKFold=0;
+    int currentKFold=fold;
 
     //Let's start GA!
     //Create Initial Population
