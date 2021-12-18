@@ -49,7 +49,7 @@ int main(int argc, const char * argv[]) {
 
     //Select the curent fold of K-fold cross validation
     //Warning: K-Fold is manual
-    fold = 7;
+    fold = 4;
 
 
     //Read CSV File
